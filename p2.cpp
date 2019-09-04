@@ -17,14 +17,14 @@ int main()
     for(int i=0;i<MAX;++i)
       for(int j=0;j<MAX;++j)
         b[i][j] = rand()%1000;
-
     int c[MAX][MAX];
 
     auto start = std::chrono::system_clock::now();
     for(int i=0;i<MAX;++i){
         for(int j=0;j<MAX;++j){
+            c[i][j]=0;
             for(int k=0;k<MAX;++k){
-                c[i][j] += a[i][k]*b[k][j];
+                c[i][j] += (a[i][k])*(b[k][j]);
             }
         }
     }
@@ -32,5 +32,4 @@ int main()
     std::chrono::duration<float,std::milli> duration = end - start;
     std::cout << duration.count() << "s " << std::endl;
     return 0;
-
 }
