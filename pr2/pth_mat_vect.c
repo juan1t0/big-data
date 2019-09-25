@@ -33,6 +33,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include "my_rand.h"
+#include "timer.h"
+
+#define MAX_VAL 10000000
 
 /* Global variables */
 int     thread_count;
@@ -40,7 +44,7 @@ int     m, n;
 double* A;
 double* x;
 double* y;
-
+unsigned seed = 1;
 /* Serial functions */
 void Usage(char* prog_name);
 void Read_matrix(char* prompt, double A[], int m, int n);
@@ -55,6 +59,7 @@ void *Pth_mat_vect(void* rank);
 int main(int argc, char* argv[]) {
    long       thread;
    pthread_t* thread_handles;
+   double start, finish;
 
    if (argc != 2) Usage(argv[0]);
    thread_count = atoi(argv[1]);
@@ -68,19 +73,22 @@ int main(int argc, char* argv[]) {
    y = malloc(m*sizeof(double));
    
    Read_matrix("Enter the matrix", A, m, n);
-   Print_matrix("We read", A, m, n);
+  // Print_matrix("We read", A, m, n);
 
    Read_vector("Enter the vector", x, n);
-   Print_vector("We read", x, n);
-
+  // Print_vector("We read", x, n);
+GET_TIME(start);
    for (thread = 0; thread < thread_count; thread++)
       pthread_create(&thread_handles[thread], NULL,
          Pth_mat_vect, (void*) thread);
 
    for (thread = 0; thread < thread_count; thread++)
       pthread_join(thread_handles[thread], NULL);
+GET_TIME(finish);
+//   Print_vector("The product is", y, m);
 
-   Print_vector("The product is", y, m);
+printf("Elapsed time = %e seconds\n", finish - start);
+
 
    free(A);
    free(x);
@@ -112,8 +120,10 @@ void Read_matrix(char* prompt, double A[], int m, int n) {
 
    printf("%s\n", prompt);
    for (i = 0; i < m; i++) 
-      for (j = 0; j < n; j++)
-         scanf("%lf", &A[i*n+j]);
+      for (j = 0; j < n; j++){
+         A[i*n+j] = my_rand(&seed) % MAX_VAL;
+      //   scanf("%lf", &A[i*n+j]);
+      }
 }  /* Read_matrix */
 
 
@@ -127,8 +137,10 @@ void Read_vector(char* prompt, double x[], int n) {
    int   i;
 
    printf("%s\n", prompt);
-   for (i = 0; i < n; i++) 
-      scanf("%lf", &x[i]);
+   for (i = 0; i < n; i++){ 
+      x[i] = my_rand(&seed) % MAX_VAL;
+   //   scanf("%lf", &x[i]);
+   }
 }  /* Read_vector */
 
 
