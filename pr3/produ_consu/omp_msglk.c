@@ -38,6 +38,7 @@ int main(int argc, char* argv[]) {
    int send_max;
    struct queue_s** msg_queues;
    int done_sending = 0;
+double s1,f1;
 
    if (argc != 3) Usage(argv[0]);
    thread_count = strtol(argv[1], NULL, 10);
@@ -45,7 +46,7 @@ int main(int argc, char* argv[]) {
    if (thread_count <= 0 || send_max < 0) Usage(argv[0]);
 
    msg_queues = malloc(thread_count*sizeof(struct queue_node_s*));
-
+s1 = omp_get_wtime();
 #  pragma omp parallel num_threads(thread_count) \
       default(none) shared(thread_count, send_max, msg_queues, done_sending)
    {
@@ -63,6 +64,7 @@ int main(int argc, char* argv[]) {
       }
 #     pragma omp atomic
       done_sending++;
+
 #     ifdef DEBUG
       printf("Thread %d > done sending\n", my_rank);
 #     endif
@@ -75,7 +77,8 @@ int main(int argc, char* argv[]) {
       Free_queue(msg_queues[my_rank]);
       free(msg_queues[my_rank]);
    }  /* omp parallel */
-
+f1 = omp_get_wtime();
+printf("Elapsed time = %e seconds\n", f1-s1);
    free(msg_queues);
    return 0;
 }  /* main */
@@ -115,7 +118,7 @@ void Try_receive(struct queue_s* q_p, int my_rank) {
       omp_unset_lock(&q_p->lock);
    } else
       Dequeue(q_p, &src, &mesg);
-   printf("Thread %d > received %d from %d\n", my_rank, mesg, src);
+   //printf("Thread %d > received %d from %d\n", my_rank, mesg, src);
 }   /* Try_receive */
 
 /*-------------------------------------------------------------------*/
