@@ -1,0 +1,5 @@
+{
+	"paper_01": {"abstract": "thu the tho", "references": ["paper_00", "paper_02"]},
+	"paper_00": {"abstract": "tha the thi", "references": ["paper_01"]},
+	"paper_02": {"abstract": "tho the tho", "references": []}
+}

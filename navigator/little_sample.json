@@ -1,0 +1,261 @@
+[
+  {
+    "abstract": "This paper describes the design and implementation of a methodology for the visualisation and hypothetical virtual reconstruction of Roman polychrome statuary for research purposes. The methodology is intended as an attempt to move beyond visualisations which are simply believable towards a more physically accurate approach. Accurate representations of polychrome statuary have great potential utility both as a means of illustrating existing interpretations and as a means of testing and revising developing hypotheses. The goal of this methodology is to propose a pipeline which incorporates a high degree of physical accuracy whilst also being practically applicable in a conventional archaeological research setting. The methodology is designed to allow the accurate visualisation of surviving objects and colourants as well as providing reliable methods for the hypothetical reconstruction of elements which no longer survive. The process proposed here is intended to limit the need for specialist recording equipment, utilising existing data and those data which can be collected using widely available technology. It is at present being implemented as part of the 'Statues in Context' project at Herculaneum and will be demonstrated here using the case study of a small area of the head of a painted female statue discovered at Herculaneum in 2006.",
+    "authors": [
+      "Gareth Beale",
+      "Graeme Earl"
+    ],
+    "n_citation": 50,
+    "references": [
+      "10482dd3-4642-4193-842f-85f3b70fcf65",
+      "3133714c-f979-4d84-9224-97361cf053ab",
+      "3a926fef-7422-4654-8776-8e31b45be563",
+      "52f480e8-85e6-4c01-9e5b-d75eabf6a8ec",
+      "6f52f995-7c4c-4a92-83aa-d1c9fbd2465c",
+      "8bd964d6-c45f-448c-9e65-efe5f98ca0a0",
+      "8fa0a362-6522-48fc-bd5e-24de00ed6511",
+      "9bfa8c24-8fb6-44d9-ba42-38b22f9cf34b",
+      "b57cc9ef-64b6-479d-9918-5f283af3219d",
+      "b678b546-e867-4a57-8963-c5545b04f32d",
+      "e5c40bf5-7ee2-4cff-a75a-b708ab69997b",
+      "f0dccb0c-c17a-4fcb-a89f-fe4bdfa3356d",
+      "fdd93623-31c8-487b-8554-d6c6b25af5f6"
+    ],
+    "title": "A methodology for the physically accurate visualisation of roman polychrome statuary",
+    "venue": "visual analytics science and technology",
+    "year": 2011,
+    "id": "001c58d3-26ad-46b3-ab3a-c1e557d16821"
+  },
+  {
+    "abstract": "This paper introduces a simple model for subsurface light transport in translucent materials. The model enables efficient simulation of effects that BRDF models cannot capture, such as color bleeding within materials and diffusion of light across shadow boundaries. The technique is efficient even for anisotropic, highly scattering media that are expensive to simulate using existing methods. The model combines an exact solution for single scattering with a dipole point source diffusion approximation for multiple scattering. We also have designed a new, rapid image-based measurement technique for determining the optical properties of translucent materials. We validate the model by comparing predicted and measured values and show how the technique can be used to recover the optical properties of a variety of materials, including milk, marble, and skin. Finally, we describe sampling techniques that allow the model to be used within a conventional ray tracer.",
+    "authors": [
+      "Henrik Wann Jensen",
+      "Stephen R. Marschner",
+      "Marc Levoy",
+      "Pat Hanrahan"
+    ],
+    "n_citation": 909,
+    "references": [
+      "0635ee72-5c76-408e-9fc8-a80ff3d8ea57",
+      "10482dd3-4642-4193-842f-85f3b70fcf65",
+      "2d18424b-55fe-4864-a411-af7231e0d0f8",
+      "5645757e-c125-499c-9d16-6ca1d02310d2",
+      "82a3251f-f04a-4bb9-a838-846635b60287",
+      "b9674b74-8f6e-4693-a80b-f9dac4f66223",
+      "cd05523d-bfa2-433d-8757-4717f1489dba"
+    ],
+    "title": "A practical model for subsurface light transport",
+    "venue": "international conference on computer graphics and interactive techniques",
+    "year": 2001,
+    "id": "52f480e8-85e6-4c01-9e5b-d75eabf6a8ec"
+  },
+  {
+    "abstract": "We present an integral equation which generalizes a variety of known rendering algorithms. In the course of discussing a monte carlo solution we also present a new form of variance reduction, called Hierarchical sampling and give a number of elaborations shows that it may be an efficient new technique for a wide variety of monte carlo procedures. The resulting rendering algorithm extends the range of optical phenomena which can be effectively simulated.",
+    "authors": [
+      "James T. Kajiya"
+    ],
+    "n_citation": 2486,
+    "references": [
+      "252b1a42-c3d9-4d3b-8de2-77a172889e44",
+      "794095cf-df7a-441b-bfce-e03b52245eaf",
+      "7ba955b9-5c2a-4cdc-80e2-d16d96006bb4",
+      "9fa55b0f-eaa6-4c59-b6e5-77e5f1a406f0",
+      "c2b666b2-427b-4e4c-b131-7a3389ce088a",
+      "f9952fb8-ab4a-4d98-92d6-e35b6dcbcbd0"
+    ],
+    "title": "The rendering equation",
+    "venue": "international conference on computer graphics and interactive techniques",
+    "year": 1986,
+    "id": "8fa0a362-6522-48fc-bd5e-24de00ed6511"
+  },
+  {
+    "abstract": "We present a path tracer using the GPU of a consumers graphics card to render images. It is implemented in Java and GLSL using GroIMP as modelling platform and runtime environment. The path tracer is capable of rendering primitives like sphere, cone, cylinder, box, plane and parallelogram. Procedurally generated materials as well as textures can be applied to those objects. The resulting image is rendered in HDR (high dynamic range).",
+    "authors": [
+      "Thomas Huwe",
+      "Reinhard Hemmerling"
+    ],
+    "n_citation": 1,
+    "references": [
+      "0006333e-abdd-447e-a605-22ae7d6f4f81",
+      "03788378-079a-4fd9-bec5-9275b0585010",
+      "0803f987-5ed2-497e-ac37-e42475b15c94",
+      "195ac389-5a07-4fd4-9c12-be42420720bc",
+      "311f4d3b-b903-4676-a20d-82084f41bcfa",
+      "36430fdd-997c-422b-b7e2-86281945cce5",
+      "483ca5b5-59c1-46f2-8cc3-cfa197377206",
+      "48e36162-a159-4b7e-8530-67352c41f766",
+      "5150b05f-51ab-4659-86af-4aff44da3fda",
+      "5cd88902-4295-4ce8-b141-5ba27848a0e4",
+      "6b2f3b6a-bdf2-41d1-be43-fe71abbde1ee",
+      "8025997f-7fc0-4e48-8bf2-6544d9b97f68",
+      "8fa0a362-6522-48fc-bd5e-24de00ed6511",
+      "9688aeb6-f5b6-4ddd-a832-e78d550af3af",
+      "cc59022f-4d27-45bc-905c-44ddd393977a",
+      "da1e7a76-548d-4ac2-9ebd-846686caed9e",
+      "f9b13a82-887a-4ae4-9103-6f921f74059a"
+    ],
+    "title": "Stochastic path tracing on consumer graphics cards",
+    "venue": "spring conference on computer graphics",
+    "year": 2008,
+    "id": "f0dccb0c-c17a-4fcb-a89f-fe4bdfa3356d"
+  },
+  {
+    "authors": [
+      "Jea-Bum Park",
+      "Byungmok Kim",
+      "Jian Shen",
+      "Sun-Young Kim",
+      "Dae-Seok Rho"
+    ],
+    "n_citation": 0,
+    "references": [
+      "8c78e4b0-632b-4293-b491-85b1976675e6",
+      "9cdc54f0-f1a0-4422-ac16-d9164d9371ee"
+    ],
+    "title": "Development of Remote Monitoring and Control Device for 50KW PV System Based on the Wireless Network",
+    "venue": "",
+    "year": 2011,
+    "id": "00338203-9eb3-40c5-9f31-cbac73a519ec"
+  },
+  {
+    "authors": [
+      "Guzin Ulutas",
+      "Mustafa Ulutas",
+      "Vasif V. Nabiyev"
+    ],
+    "n_citation": 0,
+    "references": [
+      "5626736c-e434-4e2d-8405-54940fab88ab",
+      "8e87e87b-87a8-4dd2-8365-e79fbe1b4b93",
+      "98f543e3-d61c-4099-ae96-237816472592",
+      "99e7103c-1f1c-4ac6-8cb1-e0af35606848"
+    ],
+    "title": "Improved Secret Image Sharing Method By Encoding Shared Values With Authentication Bits",
+    "venue": "international symposium on computer and information sciences",
+    "year": 2011,
+    "id": "00701b05-684f-45f9-b281-425abfec482c"
+  },
+  {
+    "abstract": "Recently, Lin and Tsai proposed an image secret sharing scheme with steganography and authentication to prevent participants from the incidental or intentional provision of a false stego-image (an image containing the hidden secret image). However, dishonest participants can easily manipulate the stego-image for successful authentication but cannot recover the secret image, i.e., compromise the steganography. In this paper, we present a scheme to improve authentication ability that prevents dishonest participants from cheating. The proposed scheme also defines the arrangement of embedded bits to improve the quality of stego-image. Furthermore, by means of the Galois Field GF(2^8), we improve the scheme to a lossless version without additional pixels.",
+    "authors": [
+      "Ching-Nung Yang",
+      "Tse-Shih Chen",
+      "Kun Hsuan Yu",
+      "Chung-Chun Wang"
+    ],
+    "n_citation": 246,
+    "references": [
+      "7d2a3148-69cc-4aa7-9067-a44e0f8b812b",
+      "8e87e87b-87a8-4dd2-8365-e79fbe1b4b93",
+      "98f543e3-d61c-4099-ae96-237816472592",
+      "bf380445-82f3-436b-afee-b0d4d9ab1ba9",
+      "c4a7cc2d-b93d-4629-bf39-4a6c18af4d56",
+      "d6adb148-5d4e-4ccb-97e7-1aacc9912442"
+    ],
+    "title": "Improvements of image sharing with steganography and authentication",
+    "venue": "Journal of Systems and Software",
+    "year": 2007,
+    "id": "5626736c-e434-4e2d-8405-54940fab88ab"
+  },
+  {
+    "abstract": "A novel approach to secret image sharing based on a (k, n)-threshold scheme with the additional capabilities of steganography and authentication is proposed. A secret image is first processed into n shares which are then hidden in n user-selected camouflage images. It is suggested to select these camouflage images to contain well-known contents, like famous character images, well-known scene pictures, etc., to increase the steganographic effect for the security protection purpose. Furthermore, an image watermarking technique is employed to embed fragile watermark signals into the camouflage images by the use of parity-bit checking, thus providing the capability of authenticating the fidelity of each processed camouflage image, called a stego-image. During the secret image recovery process, each stego-image brought by a participant is first verified for its fidelity by checking the consistency of the parity conditions found in the image pixels. This helps to prevent the participant from incidental or intentional provision of a false or tampered stego-image. The recovery process is stopped if any abnormal stego-image is found. Otherwise, the secret image is recovered from k or more authenticated stego-images. Some effective techniques for handling large images as well as for enhancing security protection are employed, including pixelwise processing of the secret image in secret sharing, use of parts of camouflage images as share components, adoption of prime-number modular arithmetic, truncation of large image pixel values, randomization of parity check policies, etc. Consequently, the proposed scheme as a whole offers a high secure and effective mechanism for secret image sharing that is not found in existing secret image sharing methods. Good experimental results proving the feasibility of the proposed approach are also included.",
+    "authors": [
+      "C. F. Lin",
+      "Wen-Hsiang Tsai"
+    ],
+    "n_citation": 393,
+    "references": [
+      "678f5495-637e-4a87-8ed0-875abb56caf4",
+      "77b1e78a-2811-4982-ab01-edf6ea366f61",
+      "98f543e3-d61c-4099-ae96-237816472592",
+      "ce394b86-3ea2-4a70-be21-b7e51a855c49",
+      "d4e86eda-1bb0-4e9a-8aec-163bd3b02305",
+      "e6bfeda7-b12f-404e-9e08-ef0462f039aa",
+      "fbf01cb2-76ef-47a3-b119-e64a11471528"
+    ],
+    "title": "Secret image sharing with steganography and authentication",
+    "venue": "Journal of Systems and Software",
+    "year": 2004,
+    "id": "8e87e87b-87a8-4dd2-8365-e79fbe1b4b93"
+  },
+  {
+    "abstract": "In this paper we show how to divide data  D  into  n  pieces in such a way that  D  is easily reconstructable from any  k  pieces, but even complete knowledge of  k  - 1 pieces reveals absolutely no information about  D . This technique enables the construction of robust key management schemes for cryptographic systems that can function securely and reliably even when misfortunes destroy half the pieces and security breaches expose all but one of the remaining pieces.",
+    "authors": [
+      "Adi Shamir"
+    ],
+    "n_citation": 7090,
+    "references": [
+      "3fb43b00-905c-4a08-934d-198ea4eb66c3",
+      "a662a4e7-415e-417e-8a8f-fe085d7e487f"
+    ],
+    "title": "How to share a secret",
+    "venue": "Communications of The ACM",
+    "year": 1979,
+    "id": "98f543e3-d61c-4099-ae96-237816472592"
+  },
+  {
+    "authors": [
+      "Dominik Szajerman",
+      "Adam Jurczy\u0144ski"
+    ],
+    "n_citation": 0,
+    "references": [
+      "3fcd7cdc-20e6-4ea3-a41c-db126fcc5cfe",
+      "bf3a11ca-5c4b-4b26-9b7a-0881b8d0f6c2"
+    ],
+    "title": "Fur Visualisation for Computer Game Engines and Real-Time Rendering",
+    "venue": "international conference on computer vision and graphics",
+    "year": 2014,
+    "id": "00964544-cbe2-4da9-bb5a-03333160eb34"
+  },
+  {
+    "abstract": "We present a method for rendering scenes with fine detail via an object called a  texel , a rendering primitive inspired by volume densities mixed with anisotropic lighting models. This technique solves a long outstanding problem in image synthesis: the rendering of furry surfaces.",
+    "authors": [
+      "James T. Kajiya",
+      "Timothy L. Kay"
+    ],
+    "n_citation": 525,
+    "references": [
+      "054ca7f2-186f-41ed-94b1-26fcc5654cf8",
+      "0ea3cee4-f681-4380-9f60-0bb95c80ae7a",
+      "1f20eb54-7e73-4534-a73c-eeb7cc01709a",
+      "5ee7a58a-fad4-4d5f-83be-998d07734e67",
+      "7679dba9-3ef9-46c3-b415-26c2f8c576d7",
+      "794095cf-df7a-441b-bfce-e03b52245eaf",
+      "84ad37e0-f198-4438-9939-57d3bf75137d",
+      "86cc9a5a-e7c0-48c1-ab4e-b201910781cb",
+      "8ae88fa1-a39f-41b2-90a9-dadd72ddb10b",
+      "bb951809-08f1-4c31-a396-a2645a10def4",
+      "c020a6b1-cf24-4a64-a2af-a4392ad0d777",
+      "e8c402f1-4ee8-442d-a634-d19430340fe6",
+      "f73615b6-f09f-45df-8176-61f00078de2c",
+      "ffeeeb06-9bd7-4c0d-bf4e-cd91c0924a28"
+    ],
+    "title": "Rendering fur with three dimensional textures",
+    "venue": "international conference on computer graphics and interactive techniques",
+    "year": 1989,
+    "id": "3fcd7cdc-20e6-4ea3-a41c-db126fcc5cfe"
+  },
+  {
+    "authors": [
+      "Jerome Edward Lengyel",
+      "Emil Praun",
+      "Adam Finkelstein",
+      "Hugues Hoppe"
+    ],
+    "n_citation": 194,
+    "references": [
+      "3fcd7cdc-20e6-4ea3-a41c-db126fcc5cfe",
+      "50784cd7-9dd3-4bae-9681-dc5062589569",
+      "812c8a61-8aae-49f2-bd6f-a628567d9b36",
+      "84922086-03d7-44bd-872a-e5d6e96f4a5e",
+      "883719fe-378b-406b-bae6-32da8043fff5",
+      "9d2f01af-98af-4e6a-966c-45378fdae334",
+      "ae7843f4-dfc5-4579-a81a-89098563b325"
+    ],
+    "title": "Real-time fur over arbitrary surfaces",
+    "venue": "interactive 3d graphics and games",
+    "year": 2001,
+    "id": "bf3a11ca-5c4b-4b26-9b7a-0881b8d0f6c2"
+  }
+]

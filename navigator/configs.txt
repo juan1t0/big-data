@@ -1,0 +1,20 @@
+# streaming jar path
+/usr/lib/hadoop-mapreduce/hadoop-streaming.jar
+
+# copy to hdfs
+hdfs dfs -copyFromLocal <local_file> /user/juanpablo_heredia/<hdfs_dir>
+
+# hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar -file ./mapper.py -mapper ./mapper.py -file ./reducer.py -reducer ./reducer.py -input /probe/* -output /out2
+
+# running python
+
+cat little_sample.json | ./mapper.py | sort -k1,1 | ./reducer.py
+
+# change permisions
+chmod +x mapper.py
+chmod +x reducer.py
+
+# links: ref
+https://medium.com/swlh/pagerank-on-mapreduce-55bcb76d1c99
+
+https://github.com/guillaume6pl/mr_pagerank
