@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<title>Page Title</title>
+<title>My Navigator</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -13,11 +13,40 @@ body {
 <body>
 
 <h1>My Navigator</h1>
-<p>Este es un buscador de artículos \n coloca algunas palabras clave separadas por ;</p>
+<p>Este es un buscador de artículos, coloca algunas palabras clave separadas por ;</p>
 <input type="text">
 <button type="button">
-buscar
+Buscar
 </button>
+
+<div class="table-responsive">
+  <table class="responsive-table  table-bordered ">
+    <thead>
+      <tr>
+        <th scope="col">Titulo</th>
+        <th scope="col">año</th>
+        <th scope="col">rank</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">2017-18</th>
+        <td data-title="Team">GSW</td>
+        <td data-title="GP">6.1</td>
+      </tr>
+      <tr>
+        <th scope="row">2016-17</th>
+        <td data-title="Team">GSW</td>
+        <td data-title="GP">6.1</td>
+      </tr>
+      <tr>
+        <th scope="row">2015-16</th>
+        <td data-title="Team">GSW</td>
+        <td data-title="GP">6.1</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 </body>
 </html>
