@@ -10,7 +10,7 @@ def read_mapper_output(file, separator='\t'):
 		yield line.rstrip().split(separator, 1)
 
 def main(separator='\t'):
-	index = {}
+	# index = {}
 	data = read_mapper_output(sys.stdin, separator=separator)
 	for current_word, group in groupby(data, itemgetter(0)):
 		try:

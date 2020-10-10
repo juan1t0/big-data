@@ -1,6 +1,31 @@
 #!/usr/bin/env python
 #coding: utf-8
 
+from sys import stdin
+import os
+import json
+
+
+def read_input(file):
+	data = json.load(file)
+	for i,paper in enumerate(data):
+		if not paper.has_key('abstract'):
+			continue
+		yield (paper['id'], float(len(paper['references'])))
+
+def main(separator='\t'):
+	data = read_input(stdin)
+	for paper_id, n_ref in data:
+		# for word in words:
+		paso = 1/n_ref
+		print '%s%s%f' % (paper_id, separator, paso)
+
+if __name__ == "__main__":
+	main()
+
+
+'''
+
 # ----------------- pagerank_mapper.py / pagerank_reducer.py -------------------
 # Goal :
 #   Scripts Compute P(s) vector for one "step s".
@@ -23,9 +48,8 @@ import sys,os
 import numpy as np
 
 
-'''
-- setting variables
-'''
+# setting variables
+
 # directories
 input_dir = sys.argv[1]
 output_dir = sys.argv[2]
@@ -34,9 +58,8 @@ with open(input_dir + '/inv_adj_list', "r") as f:
     n = 1 + int((f.readlines()[-1].split(':'))[0])
 
 
-'''
-- building  P(s-1) vector from last line in "ps.txt"
-'''
+# building  P(s-1) vector from last line in "ps.txt"
+
 if os.path.isfile(output_dir + '/ps.txt'):
 	with open(output_dir + '/ps.txt', "r") as f:
 		P_previous_step_data = f.readlines()[-1]
@@ -46,10 +69,9 @@ else:
     P_previous_step = [1 / n] * n # step 0
 
 
-'''
-- building outcoming_links_number from adj_list
-outcoming_links_number: # of outcoming links "nj" for each node j
-'''
+# building outcoming_links_number from adj_list
+# outcoming_links_number: # of outcoming links "nj" for each node j
+
 outcoming_links_number = []
 for line in open(input_dir + '/adj_list', "r"):
     node,outcoming_links_data = line.split(':')
@@ -60,12 +82,10 @@ for line in open(input_dir + '/adj_list', "r"):
     outcoming_links_number.append(len(outcoming_links))
 
 
+# building Tmat (T matrix) from stdin input (line in inv_adj_list)
+# computing (Tmat*P_previous_step)
+# printing output data on stdout
 
-'''
-- building Tmat (T matrix) from stdin input (line in inv_adj_list)
-- computing (Tmat*P_previous_step)
-- printing output data on stdout
-'''
 Tmat = np.zeros((n,n))
 TMat_Pvect_product = [1]*n # Product of T matrix with Ps vector
 for line in sys.stdin:
@@ -90,3 +110,4 @@ for line in sys.stdin:
 		########################## with open(output_dir + "mapper_output.txt","a") as f:
 		########################## 	f.write("%i\t%f" % (node,TMat_Pvect_product_i))
 		########################## 	f.write('\n')
+'''

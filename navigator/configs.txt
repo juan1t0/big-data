@@ -18,3 +18,6 @@ chmod +x reducer.py
 https://medium.com/swlh/pagerank-on-mapreduce-55bcb76d1c99
 
 https://github.com/guillaume6pl/mr_pagerank
+
+# 
+hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar -file ./ii_mapper.py -mapper ./ii_mapper.py -file ./ii_reducer.py -reducer ./ii_reducer.py -input /aminer/*.json -output /ii_1

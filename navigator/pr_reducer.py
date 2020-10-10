@@ -1,6 +1,51 @@
 #!/usr/bin/env python
 #coding: utf-8
 
+from itertools import groupby
+from operator import itemgetter
+import sys
+import re
+
+graph_dir = '/graph'
+
+def get_graph():
+	graph = {}
+	list_gs = os.listdir(graph_dir)
+	for f in list_gs:
+		with open(graph_dir+'/'+f) as gr:
+			for line in gr:
+				data = line.rstrip().split(separator, 1)
+				graph[data[0]] = data[1].rstrip(';').split(';')
+	return graph
+
+def read_mapper_output(file, separator='\t'):
+	weights = {}
+	for line in file:
+		dt = line.rstrip().split(separator, 1)
+		# yield (dt[0], dt[1].rstrip(';').split(';'))
+		weights[dt[0]]= float(dt[1])
+	return weights
+
+def main(separator='\t'):
+	graph = get_graph()
+	data = read_mapper_output(sys.stdin, separator=separator)
+	##### falta hacer la suma
+
+	#for paper_id, group in groupby(data, itemgetter(0)):
+	for paper_id, refs in data:
+		try:
+			# real_group = [id for _, id in group]
+			# print "%s%s%s" % (current_word, separator, real_group)
+			print '%s%s%s' % (paper_id, separator, refs)
+		except ValueError:
+			pass
+
+if __name__ == "__main__":
+	main()
+
+
+
+'''
 # ----------------- pagerank_mapper.py / pagerank_reducer.py -------------------
 # Goal :
 #   Scripts Compute P(s) vector for one "step s".
@@ -22,12 +67,8 @@ from __future__ import division
 import sys,os
 import numpy as np
 
+# setting variables
 
-
-
-'''
-- setting variables
-'''
 # directories
 input_dir = sys.argv[1]
 output_dir = sys.argv[2]
@@ -43,9 +84,9 @@ tol = float(tol)
 # Product of T matrice with P(s-1) vector
 TMat_Pvect_vector=[]
 [1]*n
-'''
-- building  P(s-1) vector from last line in "ps.txt"
-'''
+
+# building  P(s-1) vector from last line in "ps.txt"
+
 if os.path.isfile(output_dir + '/ps.txt'):
 	with open(output_dir + '/ps.txt', "r") as f:
 		P_previous_step_data = f.readlines()[-1]
@@ -55,10 +96,9 @@ else:
     P_previous_step = [1 / n] * n # step 0
 
 
-'''
-- getting input value on stdin as <node "i">\t<TMat_Pvect_product>
-- computing "TMat_Pvect_vector" by summing "TMat_Pvect_product" for each node "i"
-'''
+# getting input value on stdin as <node "i">\t<TMat_Pvect_product>
+# computing "TMat_Pvect_vector" by summing "TMat_Pvect_product" for each node "i"
+
 last_node = None
 last_TMat_Pvect_product = 0
 for line in sys.stdin:
@@ -85,17 +125,13 @@ TMat_Pvect_vector.append(last_TMat_Pvect_product)
 print("=TMat_Pvect_vector=========================")
 print(TMat_Pvect_vector)
 
-'''
-- computing P(s) as P(s) = (1-d) x T x P(s-1) + d/n x U
-'''
+# computing P(s) as P(s) = (1-d) x T x P(s-1) + d/n x U
+
 Ps_temp = [x * (1-d) for x in TMat_Pvect_vector]
 Ps = [x + d/n for x in Ps_temp]
 
+# sending output data
 
-
-'''
-- sending output data
-'''
 Pdiff = [abs(a - b) for a, b in zip(Ps, P_previous_step)]
 # if [Ps-Ps-1 > tol]: add new Ps value into "ps.txt" as a new line
 if max(Pdiff) > tol:
@@ -144,3 +180,4 @@ else:
 		print(t2)
 		print("PR = %.5f\n\n" % (t3))
 		rank +=1
+'''
