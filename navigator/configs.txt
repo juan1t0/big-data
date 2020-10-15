@@ -21,3 +21,7 @@ https://github.com/guillaume6pl/mr_pagerank
 
 # 
 hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar -file ./ii_mapper.py -mapper ./ii_mapper.py -file ./ii_reducer.py -reducer ./ii_reducer.py -input /aminer/*.json -output /ii_1
+
+
+
+hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar -mapper '/bin/cat' -file ./pr_reducer2.py -reducer ./pr_reducer2.py -input /pagerank00/* -output /pagerank01
